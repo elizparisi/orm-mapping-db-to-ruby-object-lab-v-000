@@ -96,7 +96,7 @@ class Student
       LIMIT ?;
     SQL
     
-    DB[:conn].execute(sql).
+    DB[:conn].execute(sql, num_students).
   end
   
   
