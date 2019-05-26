@@ -80,8 +80,9 @@ class Student
     sql = <<-SQL
       SELECT COUNT(*)
       FROM students
-      WHERE grade <= 11;
+      WHERE grade < 12;
     SQL
+    
     DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
     end
