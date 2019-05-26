@@ -79,7 +79,7 @@ class Student
   def self.students_below_12th_grade
     sql = <<-SQL
       SELECT COUNT(*)
-      FROM students 
+      FROM students
       WHERE grade < 12;
     SQL
     
@@ -87,4 +87,6 @@ class Student
       self.new_from_db(row)
     end
   end
+  
+  
 end
