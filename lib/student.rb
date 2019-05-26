@@ -96,7 +96,8 @@ class Student
       LIMIT ?;
     SQL
     
-    DB[:conn].execute(sql, num_students).
+    DB[:conn].execute(sql, num_students).map do |row|
+      self.new_from_db(row)
   end
   
   
